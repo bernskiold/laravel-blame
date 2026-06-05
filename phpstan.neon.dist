@@ -1,0 +1,8 @@
+parameters:
+  level: 4
+  paths:
+    - src
+  tmpDir: build/phpstan
+  ignoreErrors:
+    # Traits are consumed by the host application's models, not within the package itself.
+    - identifier: trait.unused

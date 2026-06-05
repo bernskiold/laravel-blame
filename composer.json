@@ -1,0 +1,76 @@
+{
+    "name": "bernskiold/laravel-blame",
+    "description": "Automatically track which user created and last updated your Eloquent models, with relations and schema macros.",
+    "keywords": [
+        "bernskiold",
+        "laravel",
+        "eloquent",
+        "blame",
+        "blameable",
+        "auditing",
+        "created by",
+        "updated by"
+    ],
+    "homepage": "https://github.com/bernskiold/laravel-blame",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bernskiold",
+            "email": "hello@bernskiold.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Erik Bernskiöld",
+            "email": "erik@bernskiold.com",
+            "homepage": "https://bernskiold.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.2",
+        "illuminate/contracts": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/database": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^8.0 || ^9.0",
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
+        "pestphp/pest": "^2.0 || ^3.0 || ^4.0",
+        "pestphp/pest-plugin-laravel": "^2.0 || ^3.0 || ^4.0",
+        "phpstan/phpstan": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bernskiold\\LaravelBlame\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bernskiold\\LaravelBlame\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bernskiold\\LaravelBlame\\LaravelBlameServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint",
+        "phpstan": "vendor/bin/phpstan analyse --configuration=phpstan.neon.dist --memory-limit=2G"
+    }
+}
