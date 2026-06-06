@@ -1,19 +1,22 @@
-name: PHPStan
+name: Fix PHP code style issues
 
 on:
     push:
         paths:
             - "**.php"
-            - "phpstan.neon.dist"
-            - ".github/workflows/phpstan.yml"
+
+permissions:
+    contents: write
 
 jobs:
-    phpstan:
+    php-code-styling:
         runs-on: ubuntu-latest
 
         steps:
             - name: Checkout code
               uses: actions/checkout@v6
+              with:
+                  ref: ${{ github.head_ref }}
 
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
@@ -25,5 +28,10 @@ jobs:
             - name: Install Composer dependencies
               run: composer install --prefer-dist --no-interaction --no-progress
 
-            - name: Run PHPStan
-              run: vendor/bin/phpstan analyse --error-format=github
+            - name: Fix PHP code style issues
+              run: vendor/bin/pint
+
+            - name: Commit changes
+              uses: stefanzweifel/git-auto-commit-action@v7
+              with:
+                  commit_message: "Fix styling"

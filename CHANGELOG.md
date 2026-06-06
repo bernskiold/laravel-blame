@@ -2,7 +2,7 @@
 
 All notable changes to `laravel-blame` will be documented in this file.
 
-## 1.0.0 - Unreleased
+## Unreleased
 
 - Initial release.
 - `TracksCreatedBy` trait recording the creating user in `created_by_id` with a `createdBy()` relation.
