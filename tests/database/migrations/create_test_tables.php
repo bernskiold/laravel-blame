@@ -28,6 +28,14 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('soft_posts', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->deletedBy();
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
         Schema::create('things', function (Blueprint $table) {
             $table->id();
             $table->string('name');

@@ -7,7 +7,8 @@ All notable changes to `laravel-blame` will be documented in this file.
 - Initial release.
 - `TracksCreatedBy` trait recording the creating user in `created_by_id` with a `createdBy()` relation.
 - `TracksUpdatedBy` trait recording the updating user in `updated_by_id` (on create and update) with an `updatedBy()` relation.
-- `Blameable` trait combining both.
+- `TracksDeletedBy` trait recording the soft-delete remover in `deleted_by_id` (cleared on restore) with a `deletedBy()` relation.
+- `Blameable` trait combining created + updated tracking.
 - Configurable user model, column names and foreign key behaviour.
 - Overridable acting-user resolution via `Blame::resolveUserIdUsing()`.
-- `createdBy()`, `updatedBy()`, `blameable()` and `dropBlameable()` schema blueprint macros.
+- `createdBy()`, `updatedBy()`, `deletedBy()`, `blameable()` and `dropBlameable()` schema blueprint macros.

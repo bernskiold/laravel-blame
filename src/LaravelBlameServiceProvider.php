@@ -58,6 +58,11 @@ class LaravelBlameServiceProvider extends ServiceProvider
             return $userColumn($this, $column ?? config('blame.updated_by_column', 'updated_by_id'), $constrainedTable);
         });
 
+        Blueprint::macro('deletedBy', function (?string $column = null, ?string $constrainedTable = null) use ($userColumn): ForeignIdColumnDefinition {
+            /** @var Blueprint $this */
+            return $userColumn($this, $column ?? config('blame.deleted_by_column', 'deleted_by_id'), $constrainedTable);
+        });
+
         Blueprint::macro('blameable', function (?string $constrainedTable = null) use ($userColumn): Blueprint {
             /** @var Blueprint $this */
             $userColumn($this, config('blame.created_by_column', 'created_by_id'), $constrainedTable);

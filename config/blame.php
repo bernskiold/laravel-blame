@@ -10,12 +10,13 @@ return [
     'user_model' => null,
 
     /*
-     * The foreign key columns used to store the creating / updating user.
-     * Individual models may override these with `CREATED_BY_COLUMN` /
-     * `UPDATED_BY_COLUMN` constants.
+     * The foreign key columns used to store the creating / updating / deleting
+     * user. Individual models may override these with `CREATED_BY_COLUMN`,
+     * `UPDATED_BY_COLUMN` and `DELETED_BY_COLUMN` constants.
      */
     'created_by_column' => 'created_by_id',
     'updated_by_column' => 'updated_by_id',
+    'deleted_by_column' => 'deleted_by_id',
 
     /*
      * Foreign key behaviour for the `createdBy()`, `updatedBy()` and
