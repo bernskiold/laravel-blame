@@ -2,6 +2,19 @@
 
 All notable changes to `laravel-blame` will be documented in this file.
 
+## 1.0.1 - 2026-11-20
+
+### What's Changed
+
+* Add PHP 8.5 and 8.6 support and drop Laravel 11 by @ErikBernskiold in https://github.com/bernskiold/laravel-blame/pull/3
+* Make PHP 8.6 a required part of the test matrix by @ErikBernskiold in https://github.com/bernskiold/laravel-blame/pull/4
+
+### New Contributors
+
+* @ErikBernskiold made their first contribution in https://github.com/bernskiold/laravel-blame/pull/3
+
+**Full Changelog**: https://github.com/bernskiold/laravel-blame/compare/1.0.0...1.0.1
+
 ## 1.0.0 - 2026-06-06
 
 **Full Changelog**: https://github.com/bernskiold/laravel-blame/commits/1.0.0
